@@ -1,0 +1,5 @@
+OPENAI_API_KEY=sk-xxxxx
+LLM_MODEL=gpt-4.1
+SAP_BASE_URL=https://your-s4-server/sap/opu/odata/sap
+SAP_USERNAME=user
+SAP_PASSWORD=pass

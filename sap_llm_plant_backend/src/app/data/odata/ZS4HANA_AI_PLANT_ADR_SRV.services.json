@@ -1,0 +1,587 @@
+{
+  "service_name": "ZS4HANA_AI_PLANT_ADR_SRV",
+  "service_version": "1.0",
+  "description": "Plant Address & Communication OData Service",
+  "base_url": "/sap/opu/odata/sap/ZS4HANA_AI_PLANT_ADR_SRV",
+  "entities": [
+    {
+      "entity_name": "TELEPHONEADDRSet",
+      "description": "Telephone address data for Plant",
+      "primary_key": [
+        "PLANT"
+      ],
+      "fields": [
+        {
+          "name": "PLANT",
+          "description": "Plant",
+          "type": "Edm.String",
+          "length": 4,
+          "abap_type": "WERKS",
+          "key": true
+        },
+        {
+          "name": "COUNTRY",
+          "description": "Country/Region for Telephone/Fax Number",
+          "type": "Edm.String",
+          "length": 3,
+          "abap_type": "LAND1",
+          "key": false
+        },
+        {
+          "name": "COUNTRYISO",
+          "description": "ISO Code of the Country/Region",
+          "type": "Edm.String",
+          "length": 2,
+          "abap_type": "LAISO",
+          "key": false
+        },
+        {
+          "name": "STD_NO",
+          "description": "Standard Sender Address in this Communication Type",
+          "type": "Edm.String",
+          "length": 1,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "TELEPHONE",
+          "description": "Telephone No.: Dialing Code and Number",
+          "type": "Edm.String",
+          "length": 30,
+          "abap_type": "TEL_NUMBER",
+          "key": false
+        },
+        {
+          "name": "EXTENSION",
+          "description": "Telephone no.: Extension",
+          "type": "Edm.String",
+          "length": 10,
+          "abap_type": "TEL_EXTENS",
+          "key": false
+        },
+        {
+          "name": "TEL_NO",
+          "description": "Complete Number: Dialing Code+Number+Extension",
+          "type": "Edm.String",
+          "length": 30,
+          "abap_type": "TEL_NUMBER",
+          "key": false
+        },
+        {
+          "name": "CALLER_NO",
+          "description": "Telephone number for determining caller",
+          "type": "Edm.String",
+          "length": 30,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "STD_RECIP",
+          "description": "Indicator: Telephone is SMS-Enabled",
+          "type": "Edm.String",
+          "length": 1,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "R_3_USER",
+          "description": "Indicator: Telephone is a Mobile Telephone",
+          "type": "Edm.String",
+          "length": 1,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "HOME_FLAG",
+          "description": "Recipient address in this communication type (mail sys.grp)",
+          "type": "Edm.String",
+          "length": 1,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "CONSNUMBER",
+          "description": "Sequence Number",
+          "type": "Edm.String",
+          "length": 3,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "ERRORFLAG",
+          "description": "Flag: Record not processed",
+          "type": "Edm.String",
+          "length": 1,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "FLG_NOUSE",
+          "description": "Flag: This Communication Number is Not Used",
+          "type": "Edm.String",
+          "length": 1,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "VALID_FROM",
+          "description": "Communication Data: Valid From (YYYYMMDDHHMMSS)",
+          "type": "Edm.DateTime",
+          "precision": 0,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "VALID_TO",
+          "description": "Communication Data: Valid To (YYYYMMDDHHMMSS)",
+          "type": "Edm.DateTime",
+          "precision": 0,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "MSG_TYP",
+          "description": "Message Type",
+          "type": "Edm.String",
+          "length": 10,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "MSG_DESC",
+          "description": "Message Description",
+          "type": "Edm.String",
+          "length": 100,
+          "abap_type": null,
+          "key": false
+        }
+      ]
+    },
+    {
+      "entity_name": "POSTADDRSet",
+      "description": "Postal address data for Plant",
+      "primary_key": [
+        "PLANT"
+      ],
+      "fields": [
+        {
+          "name": "PLANT",
+          "description": "Plant",
+          "type": "Edm.String",
+          "length": 4,
+          "abap_type": "WERKS",
+          "key": true
+        },
+        {
+          "name": "ADDR_VERS",
+          "description": "Version ID for International Addresses",
+          "type": "Edm.String",
+          "length": 1,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "FROM_DATE",
+          "description": "Valid-from date",
+          "type": "Edm.DateTime",
+          "precision": 0,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "TO_DATE",
+          "description": "Valid-to date",
+          "type": "Edm.DateTime",
+          "precision": 0,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "TITLE",
+          "description": "Form-of-Address Key",
+          "type": "Edm.String",
+          "length": 4,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "NAME",
+          "description": "Name 1",
+          "type": "Edm.String",
+          "length": 40,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "NAME_2",
+          "description": "Name 2",
+          "type": "Edm.String",
+          "length": 40,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "NAME_3",
+          "description": "Name 3",
+          "type": "Edm.String",
+          "length": 40,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "NAME_4",
+          "description": "Name 4",
+          "type": "Edm.String",
+          "length": 40,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "CONV_NAME",
+          "description": "Converted name field (with form of address)",
+          "type": "Edm.String",
+          "length": 50,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "C_O_NAME",
+          "description": "c/o name",
+          "type": "Edm.String",
+          "length": 40,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "CITY",
+          "description": "City",
+          "type": "Edm.String",
+          "length": 40,
+          "abap_type": "ORT01",
+          "key": false
+        },
+        {
+          "name": "DISTRICT",
+          "description": "District",
+          "type": "Edm.String",
+          "length": 40,
+          "abap_type": "ORT02",
+          "key": false
+        },
+        {
+          "name": "CITY_NO",
+          "description": "City code for city/street file",
+          "type": "Edm.String",
+          "length": 12,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "DISTRCT_NO",
+          "description": "District code for City and Street file",
+          "type": "Edm.String",
+          "length": 8,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "POSTL_COD1",
+          "description": "City postal code",
+          "type": "Edm.String",
+          "length": 10,
+          "abap_type": "PSTLZ",
+          "key": false
+        },
+        {
+          "name": "POSTL_COD2",
+          "description": "PO Box Postal Code",
+          "type": "Edm.String",
+          "length": 10,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "POSTL_COD3",
+          "description": "Company Postal Code (for Large Customers)",
+          "type": "Edm.String",
+          "length": 10,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "STREET",
+          "description": "Street",
+          "type": "Edm.String",
+          "length": 60,
+          "abap_type": "STRAS",
+          "key": false
+        },
+        {
+          "name": "STREET_NO",
+          "description": "Street Number for City/Street File",
+          "type": "Edm.String",
+          "length": 12,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "STR_ABBR",
+          "description": "(Not Supported) Abbreviation of Street Name",
+          "type": "Edm.String",
+          "length": 2,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "HOUSE_NO",
+          "description": "House Number",
+          "type": "Edm.String",
+          "length": 10,
+          "abap_type": "HOUSE_NUM1",
+          "key": false
+        },
+        {
+          "name": "HOUSE_NO2",
+          "description": "House number supplement",
+          "type": "Edm.String",
+          "length": 10,
+          "abap_type": "HOUSE_NUM2",
+          "key": false
+        },
+        {
+          "name": "HOUSE_NO3",
+          "description": "(Not supported) House Number Range",
+          "type": "Edm.String",
+          "length": 10,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "STR_SUPPL1",
+          "description": "Street 2",
+          "type": "Edm.String",
+          "length": 40,
+          "abap_type": "STR_SUPPL1",
+          "key": false
+        },
+        {
+          "name": "STR_SUPPL2",
+          "description": "Street 3",
+          "type": "Edm.String",
+          "length": 40,
+          "abap_type": "STR_SUPPL2",
+          "key": false
+        },
+        {
+          "name": "STR_SUPPL3",
+          "description": "Street 4",
+          "type": "Edm.String",
+          "length": 40,
+          "abap_type": "STR_SUPPL3",
+          "key": false
+        },
+        {
+          "name": "LOCATION",
+          "description": "Street 5",
+          "type": "Edm.String",
+          "length": 40,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "BUILDING",
+          "description": "Building (Number or Code)",
+          "type": "Edm.String",
+          "length": 20,
+          "abap_type": "BUILDING",
+          "key": false
+        },
+        {
+          "name": "FLOOR",
+          "description": "Floor in building",
+          "type": "Edm.String",
+          "length": 10,
+          "abap_type": "FLOOR",
+          "key": false
+        },
+        {
+          "name": "ROOM_NO",
+          "description": "Room or Apartment Number",
+          "type": "Edm.String",
+          "length": 10,
+          "abap_type": "ROOMNUMBER",
+          "key": false
+        },
+        {
+          "name": "COUNTRY",
+          "description": "Country/Region Key",
+          "type": "Edm.String",
+          "length": 3,
+          "abap_type": "LAND1",
+          "key": false
+        },
+        {
+          "name": "COUNTRYISO",
+          "description": "ISO Code of the Country/Region",
+          "type": "Edm.String",
+          "length": 2,
+          "abap_type": "LAISO",
+          "key": false
+        },
+        {
+          "name": "LANGU",
+          "description": "Language Key",
+          "type": "Edm.String",
+          "length": 1,
+          "abap_type": "SPRAS",
+          "key": false
+        },
+        {
+          "name": "LANGU_ISO",
+          "description": "2-Character SAP Language Code",
+          "type": "Edm.String",
+          "length": 2,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "REGION",
+          "description": "Region (State, Province, County)",
+          "type": "Edm.String",
+          "length": 3,
+          "abap_type": "REGIO",
+          "key": false
+        },
+        {
+          "name": "SORT1",
+          "description": "Search Term 1",
+          "type": "Edm.String",
+          "length": 20,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "SORT2",
+          "description": "Search Term 2",
+          "type": "Edm.String",
+          "length": 20,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "MSG_TYP",
+          "description": "Message Type",
+          "type": "Edm.String",
+          "length": 10,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "MSG_DESC",
+          "description": "Message Description",
+          "type": "Edm.String",
+          "length": 100,
+          "abap_type": null,
+          "key": false
+        }
+      ]
+    },
+    {
+      "entity_name": "FAXADDRSet",
+      "description": "Fax address data for Plant",
+      "primary_key": [
+        "PLANT"
+      ],
+      "fields": [
+        {
+          "name": "PLANT",
+          "description": "Plant",
+          "type": "Edm.String",
+          "length": 4,
+          "abap_type": "WERKS",
+          "key": true
+        },
+        {
+          "name": "COUNTRY",
+          "description": "Country/Region for Telephone/Fax Number",
+          "type": "Edm.String",
+          "length": 3,
+          "abap_type": "LAND1",
+          "key": false
+        },
+        {
+          "name": "COUNTRYISO",
+          "description": "ISO Code of the Country/Region",
+          "type": "Edm.String",
+          "length": 2,
+          "abap_type": "LAISO",
+          "key": false
+        },
+        {
+          "name": "STD_NO",
+          "description": "Standard Sender Address in this Communication Type",
+          "type": "Edm.String",
+          "length": 1,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "FAX",
+          "description": "Fax Number: Dialing Code and Number",
+          "type": "Edm.String",
+          "length": 30,
+          "abap_type": "FAX_NUMBER",
+          "key": false
+        },
+        {
+          "name": "EXTENSION",
+          "description": "Fax no.: Extension",
+          "type": "Edm.String",
+          "length": 10,
+          "abap_type": "FAX_EXTENS",
+          "key": false
+        },
+        {
+          "name": "FAX_NO",
+          "description": "Complete Number: Dialing Code+Number+Extension",
+          "type": "Edm.String",
+          "length": 30,
+          "abap_type": "FAX_NUMBER",
+          "key": false
+        },
+        {
+          "name": "SENDER_NO",
+          "description": "Fax number for finding sender",
+          "type": "Edm.String",
+          "length": 30,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "FAX_GROUP",
+          "description": "Fax group (G3, G4, ...)",
+          "type": "Edm.String",
+          "length": 1,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "MSG_TYP",
+          "description": "Message Type",
+          "type": "Edm.String",
+          "length": 10,
+          "abap_type": null,
+          "key": false
+        },
+        {
+          "name": "MSG_DESC",
+          "description": "Message Description",
+          "type": "Edm.String",
+          "length": 100,
+          "abap_type": null,
+          "key": false
+        }
+      ]
+    }
+  ]
+}
