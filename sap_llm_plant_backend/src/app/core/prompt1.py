@@ -35,3 +35,21 @@ Rules:
 - If you cannot comply, set action="error" with a concise message.
 - Output ONLY the two blocks (<bot> and <control>) and ensure the JSON inside <control> is STRICTLY valid JSON (no trailing commas, no comments).
 """
+USER_PROMPT_TEMPLATE = """
+User said: "{user_input}"
+
+OData Services JSON:
+{odata_json}
+
+Conversation State:
+{state_json}
+
+Follow rules and generate next assistant message.
+"""
+
+def build_prompt(user_input, odata_json, state_json):
+    return USER_PROMPT_TEMPLATE.format(
+        user_input=user_input,
+        odata_json=odata_json,
+        state_json=state_json
+    )
